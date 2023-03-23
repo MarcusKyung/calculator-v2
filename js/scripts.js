@@ -20,6 +20,8 @@ function divide(number1, number2) {
 //User Logic
 function operator(event) {
   event.preventDefault();
+  const number1 = parseInt(document.querySelector("input#number1").value);
+  const number2 = parseInt(document.querySelector("input#number2").value);
   const op = document.querySelector("input[name='operator']:checked").value;
 
 if (op === "add") {
@@ -33,10 +35,11 @@ if (op === "add") {
   }
 
 window.addEventListener("submit", function() {
-  document.getElementById("p").innerText.value = "answer";
+  document.getElementById("p").innerText = answer;
 });
 
 window.addEventListener("load", function() {
   document.getElementById("calculator").addEventListener("submit", operator);
+  event.preventDefault();
 });
 }
